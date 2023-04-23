@@ -1,0 +1,53 @@
+{
+  "name": "store-manager",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "start": "turbo run start --parallel",
+    "start:dev": "turbo run start:dev --parallel",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "preinstall": "node ./scripts/preinstall.js",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.0",
+    "ahooks": "^3.7.2",
+    "zustand": "^4.1.4",
+    "history": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.18",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-angular": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "@commitlint/types": "^17.0.0",
+    "eslint": "^8.23.1",
+    "eslint-config-custom": "workspace:*",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "prettier-plugin-organize-imports": "^3.1.1",
+    "turbo": "latest",
+    "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": [
+      "pnpm run format"
+    ]
+  },
+  "packageManager": "pnpm@7.17.0"
+}

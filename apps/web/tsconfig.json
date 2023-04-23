@@ -1,0 +1,13 @@
+{
+  "extends": "tsconfig/react-library.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "@typing/*": ["../../packages/typing/*"]
+    },
+    "types": ["vite/client", "vite-plugin-svgr/client"]
+  },
+  "include": ["src/**/*", "../../packages/typing/*"],
+  "exclude": ["node_modules"]
+}
